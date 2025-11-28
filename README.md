@@ -1,10 +1,11 @@
 # InventoryPro
 
-**Demo:** https://inventoryproo.vercel.app/
+
 
 ## Overview
 
-InventoryPro is a comprehensive inventory management system designed to help businesses efficiently track, manage, and optimize their inventory. This project is currently under active development and aims to provide features like real-time stock tracking, order management, supplier management, and detailed reporting. 
+This repository is created for understanding and converting an exsisting mern project to run in docker containers. This repo has 2 dockerfile each for backend and frontend and a docker-compose file to automate creation of all containers. Running docker-compose file will create 3 containers mongo,react-frontend,node-backend. 
+InventoryPro is a comprehensive inventory management system designed to help businesses efficiently track, manage, and optimize their inventory.
 
 ## Tech Stack:
 
@@ -23,16 +24,7 @@ InventoryPro is a comprehensive inventory management system designed to help bus
 
 ## Installation
 
-*(Instructions for installation will be provided once the project is completed.)*
+git clone https://github.com/hussain-sihor/DockerInventoryPro.git
 
-## Usage
+docker compose up
 
-*(Usage instructions and examples will be added as the project develops.)*
-
-## Contributing
-
-We welcome contributions from the community! Please feel free to submit issues, feature requests, or pull requests as the project progresses.
-
-## License
-
-*(The license information will be added here.)*

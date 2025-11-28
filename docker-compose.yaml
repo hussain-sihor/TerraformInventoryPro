@@ -1,0 +1,60 @@
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME : "admin"
+      MONGO_INITDB_ROOT_PASSWORD : "secret"
+    networks:
+      - inventory
+    ports:
+      - "27017:27017"
+    restart: always
+    healthcheck:
+      test: ["CMD" , "mongosh" , "--eval" , "db.adminCommand('ping')"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+      start_period: 10s
+
+  nodejs:
+    build:
+      context: ./backend
+    container_name: node-backend
+    environment:
+      MONGO_URI : "mongodb://admin:secret@mongodb:27017/mydb?authSource=admin"
+      JWT_TOKEN : "mysupersecretkey123"
+    ports:
+      - "5000:5000"
+    networks:
+      - inventory
+    depends_on : 
+      - mongodb
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl" , "-f" , "http://localhost:5000/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+      
+  react:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:80"
+    restart: always
+    depends_on:
+      - nodejs
+    healthcheck:
+      test: ["CMD" , "curl" , "-f" , "http://localhost:5173"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  inventory:

@@ -13,7 +13,7 @@ connectDB()
 
 // http://localhost:5173
 // https://inventoryproo.vercel.app
-const corsOptions = { origin: "https://inventoryproo.vercel.app",methods:"GET,POST,PUT,PATCH,POST,DELETE", credentials: true }
+const corsOptions = { origin: "http://localhost:5173",methods:"GET,POST,PUT,PATCH,POST,DELETE", credentials: true }
 
 app.use(cors(corsOptions));
 

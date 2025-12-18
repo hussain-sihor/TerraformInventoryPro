@@ -4,7 +4,7 @@ services:
       context: ./backend
     container_name: node-backend
     environment:
-      MONGO_URI: "mongodb+srv://sihorwalahussain:4UII2RAS6z7XwqrY@cluster0.6wmmgqm.mongodb.net/?appName=Cluster0"
+      MONGO_URI: "YOUR_KEY"
       JWT_TOKEN: "mysupersecretkey123"
     ports:
       - "5000:5000"

@@ -11,7 +11,7 @@ const Intro = () => {
   return (
    <>
     
-   <div className="w-full h-[90.3vh] flex bg-primary ">
+   <div className="w-full h-[calc(100vh-65px)] flex bg-primary ">
 
     <div className="left w-[50%] flex justify-center items-start flex-col gap-8 pl-14 text-white">
       <h1 className='text-5xl font-bold '>Inventory & Stock <br></br> Managment Solution</h1>

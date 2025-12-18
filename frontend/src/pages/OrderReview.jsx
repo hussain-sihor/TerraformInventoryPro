@@ -144,7 +144,7 @@ const OrderReview = () => {
 		numformatted = totalValue.toLocaleString("en-IN");
 	}
 	return (
-		<div className="w-full h-[90.3vh] flex justify-center items-center pl-4 pr-4 pt-4 pb-4 bg-primary">
+		<div className="w-full h-[calc(100vh-65px)] flex justify-center items-center pl-4 pr-4 pt-4 pb-4 bg-primary">
 			<div className="w-full h-full flex flex-col">
 				{/* NavBar  */}
 				<div className="  pl-4 pr-4 nav flex  w-full h-[10%] items-center justify-between text-white gap-2 ">

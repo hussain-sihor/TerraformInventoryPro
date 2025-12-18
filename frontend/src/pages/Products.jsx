@@ -105,7 +105,7 @@ const Products = () => {
 	}, [flag]);
 
 	return (
-		<div className="w-full h-[90.3vh] bg-primary">
+		<div className="w-full h-[calc(100vh-65px)] bg-primary">
 			{/* NavBar  */}
 			<div className="flex justify-start w-full h-[25%] flex-col items-center pl-8 pr-8 pt-4 pb-4 gap-10">
 

@@ -5,7 +5,7 @@ import AddCategory from '../components/AddCategory'
 const Categories = () => {
 
   return (
-    <div className='w-full h-[90.3vh] flex justify-start items-center  pl-8 pr-8 pt-4 pb-4 bg-primary'>
+    <div className='w-full h-[calc(100vh-65px)] flex justify-start items-center  pl-8 pr-8 pt-4 pb-4 bg-primary'>
 
       <div className='right w-[55%] h-full'>
 

@@ -34,7 +34,7 @@ const NavBar = () => {
 
   
   return (
-    <div className='w-full h-[70px] justify-between items-center text-white bg-black border-b-[1px] border-white border-dashed flex '>
+    <div className='w-full h-[65px] justify-between items-center text-white bg-black border-b-[1px] border-white border-dashed flex '>
 
     <div className="left justify-start w-[20%] gap-4 flex items-center h-full pl-8">
      <img src={logo} alt="" className='w-[28px]'/>

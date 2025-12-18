@@ -40,7 +40,7 @@ const LoginForm = () => {
 		 };
 
 	return (
-		<div className="w-full h-[90.3vh] flex justify-center items-center bg-primary">
+		<div className="w-full h-[calc(100vh-65px)] flex justify-center items-center bg-primary">
 			<div className="w-[45vw] h-[65vh] flex justify-center items-center  py-5  flex-col gap-5  rounded-xl bg-secondary border-2 border-white">
 	
 				<form

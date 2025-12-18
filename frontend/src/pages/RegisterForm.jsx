@@ -19,7 +19,7 @@ const LoginForm = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try{
-		const res = axiosInstance.post("/users/register", {
+		const res = await axiosInstance.post("/users/register", {
 				email,
 				password,
         phone,
@@ -36,8 +36,17 @@ const LoginForm = () => {
 		   toast.error(err.response.data.message, toastOptions);
 		  }
 	};
+
+	const toastOptions = {
+		position: "bottom-right",
+		theme: "dark",
+		pauseOnHover: false,
+		draggable: true,
+		autoClose: 4000,
+	};
+
 	return (
-		<div className="w-full h-[90.3vh] flex justify-center items-center bg-primary">
+		<div className="w-full h-[calc(100vh-65px)] flex justify-center items-center bg-primary">
 			<div className="w-[45vw] h-[80vh] flex justify-center items-center  py-5  flex-col gap-5  rounded-xl bg-secondary border-2 border-white">
 				<form
 					//handelSubmit funct from react-hook-form which needs userdefined function

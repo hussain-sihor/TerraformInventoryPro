@@ -136,7 +136,7 @@ const Addproduct = () => {
 	};
 
 	return (
-		<div className="w-full h-[90.3vh] flex justify-start items-start bg-primary flex-col pl-8 pr-8 pt-4 pb-4 ">
+		<div className="w-full h-[calc(100vh-65px)] flex justify-start items-start bg-primary flex-col pl-8 pr-8 pt-4 pb-4 ">
 		<div className="w-full h-[8%] ">
 			<h1 className="text-xl font-bold text-white">Add product</h1>
 		</div>

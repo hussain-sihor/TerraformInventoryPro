@@ -95,14 +95,28 @@ resource "azurerm_network_security_rule" "allowSSH" {
   network_security_group_name = azurerm_network_security_group.nsg.name
 }
 
-resource "azurerm_network_security_rule" "allowHttp" {
-  name                        = "AllowHTTP"
+resource "azurerm_network_security_rule" "allowFrontend" {
+  name                        = "AllowFrontend"
   priority                    = 110
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "5173"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.rg.name
+  network_security_group_name = azurerm_network_security_group.nsg.name
+}
+
+resource "azurerm_network_security_rule" "allowBackend" {
+  name                        = "AllowBackend"
+  priority                    = 105
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "5000"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.rg.name
@@ -211,9 +225,3 @@ resource "azurerm_lb_rule" "rule_5173" {
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.backend_pool.id]
   probe_id                       = azurerm_lb_probe.probe_5173.id
 }
-
-
-
-# USE NORMAL LINUX INSTEAD OF RED HAT
-# GIVE A STARTUP FILE WHICH WILL INSTALL AND RUN DOCKER CONTAINER AND DO DOCKER COMPOSE UP TO CREATE FORNTEND AND BACKEND CONTAINER
-

@@ -13,9 +13,12 @@ connectDB()
 
 // http://localhost:5173
 // https://inventoryproo.vercel.app
-const corsOptions = { origin: "http://localhost:5173",methods:"GET,POST,PUT,PATCH,POST,DELETE", credentials: true }
 
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: true,   // reflects request origin
+  credentials: true,
+  methods: "GET,POST,PUT,PATCH,DELETE"
+}));
 
 app.use(express.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -32,11 +35,7 @@ app.use("/api/reminders",authMiddleware,require("./routes/reminderRoute"));
 
 app.get("/",(req,res)=>{
   res.status(200).send("Hello...");
-
 })
-
-
-
 
 app.listen(PORT,()=>{
   console.log(`Server listening on ${PORT}`)

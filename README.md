@@ -25,6 +25,10 @@ Finally, the repository includes a **docker-compose** file that uses the Dockerf
   - the `.env` file
   - the `docker-compose.yaml` file
 
+- Update `backend end point to your vm address` in frontend/src/lib/axiosInstance.js:
+
+  - baseURL: 'http://localhost:5000/api/' ---> baseURL: 'http://<VM_IP>:5000/api/',
+
 ### Terraform setup
 
 - Navigate to the `terraform` folder
